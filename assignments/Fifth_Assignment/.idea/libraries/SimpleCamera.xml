@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SimpleCamera">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SimpleCamera.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

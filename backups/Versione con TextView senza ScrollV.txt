@@ -1,0 +1,76 @@
+Versione con TextView senza ScrollView
+
+package com.first.countryinfoapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ImageView iv = findViewById(R.id.IV);
+        TextView tv = findViewById(R.id.TV);
+        tv.setMovementMethod(new ScrollingMovementMethod());
+        if(((RadioButton)findViewById(R.id.EN)).isChecked()){
+            iv.setImageResource(R.drawable.england);
+            tv.setScrollY(0);
+            tv.setText(R.string.en);
+        }
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+        ImageView iv = findViewById(R.id.IV);
+        TextView tv = findViewById(R.id.TV);
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.EN:
+                if (checked) {
+                    // england case
+                    iv.setImageResource(R.drawable.england);
+                    tv.setScrollY(0);
+                    tv.setText(getString(R.string.en));
+                    //tv.setMovementMethod(new ScrollingMovementMethod());
+                }
+                break;
+            case R.id.IT:
+                if (checked) {
+                    // england case
+                    iv.setImageResource(R.drawable.italy);
+                    tv.setScrollY(0);
+                    tv.setText(R.string.it);
+                    //tv.setMovementMethod(new ScrollingMovementMethod());
+                }
+                break;
+            case R.id.FR:
+                if (checked) {
+                    // france case
+                    iv.setImageResource(R.drawable.france);
+                    tv.setScrollY(0);
+                    tv.setText(R.string.fr);
+                    //tv.setMovementMethod(new ScrollingMovementMethod());
+                }
+                break;
+            case R.id.DE:
+                if (checked) {
+                    // germany case
+                    iv.setImageResource(R.drawable.germany);
+                    tv.setScrollY(0);
+                    tv.setText(R.string.de);
+                    //tv.setMovementMethod(new ScrollingMovementMethod());
+                }
+                break;
+        }
+    }
+}
